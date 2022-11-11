@@ -1,0 +1,340 @@
+$font-main: "impact", serif;
+$font-sub:"calibri", serif;
+
+
+
+body{
+  margin: 0;
+
+  a{
+    cursor: pointer;
+    text-decoration-line: none;
+    color: inherit;
+  }
+  button{
+    cursor: pointer;
+  }
+  a:hover {
+    background-color: inherit;
+    color: gold;
+  }
+
+}
+@mixin themes($theme-name, $header-color, $footerheader-color, $buttons-color, $nav-color1, $nav-color2) {
+   .#{$theme-name} {
+     .site {
+       display: flex;
+       flex-direction: column;
+     }
+
+     header {
+       position: sticky;
+       top:0;
+       display: flex;
+       box-sizing: border-box;
+       align-items: center;
+       column-gap: 1em;
+       font-family: $font-main;
+       color: $header-color;
+       text-align: center;
+       background-color: $footerheader-color;
+       width: 100%;
+       height: calc(2em + 4vw);
+       padding-left: 30px;
+       margin:0;
+         a:hover{
+           background-color: darkblue;
+         }
+       h1{
+         color: $header-color;
+         font-size: calc(1em + 2vw);
+         letter-spacing: 8px;
+         }
+       img{
+         height:  calc(1em + 1vw);
+       }
+     }
+
+     main{
+
+       display: grid;
+       grid-template-columns: 1fr 4fr;
+       grid-template-areas: "nav mainscreen"
+                              "nav favbook"
+                              "nav place"
+                              "nav feeback";
+     }
+
+     .nav {
+       grid-area: nav;
+       //position: sticky;
+       //top:5px;
+        font-family: Calibri, serif;
+       font-size: calc(0.2em + 1vw);
+       background-color: $nav-color2;
+
+       ul {
+         position: sticky;
+         top:calc(2.6em + 4vw);
+         display:block;
+         list-style-type: none;
+         color: white;
+         margin: 0;
+         height: auto;
+         padding-left: 0;
+         background-color: $nav-color2;
+
+         li:nth-child(odd) {
+           background-color: $nav-color1;
+         }
+       }
+
+       li a {
+         box-sizing: border-box;
+         display: block;
+         padding: 1em;
+         width: 100%;
+         font-weight: bolder;
+         border-bottom: 1px solid black;
+
+         img {
+           width: 1rem;
+         }
+       }
+     }
+
+     .mainscreen {
+       height: 100vh;
+       grid-area: mainscreen;
+       display: flex;
+       flex-direction: column;
+       box-sizing: border-box;
+       //overflow-y: scroll;
+       align-items: center;
+       //max-height:500px;
+       line-height: 1em;
+       //padding-bottom: 1vh;
+       border-bottom: 0.5px solid lightgray;
+       h1 {
+         color: red;
+         font-family: $font-main;
+         font-size: calc(2em + 6vm);
+
+       }
+       h3 {
+         font-family: $font-main;
+         font-size: calc(1em + 4vw);
+       }
+
+       img {
+         height: calc(20em + 5vw);
+       }
+     }
+
+     .favbook {
+      height: 100vh;
+       grid-area: favbook;
+       display: flex;
+        flex-direction: row;
+       //overflow-y: scroll;
+       padding-left: 1em;
+       box-sizing: border-box;
+       justify-content: space-between;
+       border-bottom: 0.5px solid lightgray;
+      .booktext {
+        grid-area: text;
+
+        h1 {
+          color: red;
+          font-family: $font-main;
+          font-size: calc(2em + 1vw);
+        }
+
+        h3 {
+          font-family: $font-main;
+          font-size: calc(1em + 1vw);
+        }
+
+        p {
+          grid-area: bookdescription;
+          font-family: $font-sub;
+          font-size: calc(0.2em + 1vw);
+          width: 80%;
+        }
+      }
+       .bookimg{
+         display: flex;
+         flex-direction: column;
+         img{
+          height: calc(20em + 1vw);
+          align-self: center;
+          padding-bottom:5%;
+          padding-top:5% ;
+       }
+
+       button {
+         grid-area: press;
+         background-color: $nav-color2;
+         border-radius: 10%;
+         color: black;
+         padding: 1em;
+
+       }
+       }
+
+       }
+     .placevisited{
+       grid-area: place;
+       display: grid;
+       grid-template-columns: 2fr 1fr 0.5fr;
+       justify-content: space-evenly;
+       padding-left: 1em;
+       box-sizing: border-box;
+       border-bottom: 0.5px solid lightgray;
+       height: 100vh;
+      .description{
+        h1 {
+          color: red;
+          font-family: $font-main;
+          font-size: calc(2em + 1vw);
+        }
+        h3 {
+          font-family: $font-main;
+          font-size: calc(1em + 1vw);
+        }
+        p {
+          font-family: $font-sub;
+          font-size: calc(0.2em + 1vw);
+          width: 80%;
+        }
+      }
+       .pics{
+         display: flex;
+         flex-direction: column;
+         overflow-y: scroll;
+         overflow-x: hidden;
+         height: 50%;
+         margin-top:1em;
+         img{
+           align-self: end;
+           width: calc(0.2em + 11vw);
+           height: calc(0.2em + 9vw);
+           margin: 1%;
+         }
+
+       }
+     }
+
+     .feedbackform {
+       height: 100vh;
+       grid-area: feeback;
+       display: flex;
+       padding-left: 5%;
+       flex-direction: column;
+       align-content: center;
+       font-family: $font-sub;
+       font-size: 0.5em;
+
+
+       .feedback, .personal{
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         //grid-template-rows:1fr 1fr ;
+         box-sizing: border-box;
+          border: 2px solid darkgray;
+         border-radius: 2%;
+         width: 80%;
+         padding-left: 1%;
+
+
+
+       }
+      input{
+        //width: 8vw;
+        font-size: 0.5em;
+        align-self: center;
+      }
+
+
+        h1 {
+          color: red;
+          font-family: $font-main;
+          font-size: calc(2em + 1vw);
+        }
+        h3 {
+          font-family: $font-main;
+          font-size: calc(1em + 1vw);
+        }
+       h5{
+         font-family: $font-sub;
+          font-size: calc(0.5em + 1vw);
+       }
+
+       #submit{
+         background-color: green;
+         margin: 1%;
+         border-radius: 3px;
+         border-width: 1px;
+        }
+         #reset{
+           background-color: lightyellow;
+           margin: 1%;
+           border-radius: 3px;
+           border-width: 1px;
+         }
+
+
+
+
+     }
+
+
+     footer {
+       position: sticky;
+       bottom:0;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       box-sizing: border-box;
+       font-family: Calibri, serif;
+       font-size: calc(0.1em + 1vw);
+       color: white;
+       background-color: $footerheader-color;
+       width: 100%;
+       height: calc(1.5em + 2vw);
+       line-height: 0.5px;
+
+       a {
+         color: white;
+       }
+     }
+   }
+}
+
+
+
+
+
+@include themes(dark, rgba(225, 219, 206, 0.91), black, rgba(0, 0, 0, 0.2), #810808, #b41919);
+@include themes(bright, rgb(255, 255, 255), rgb(25, 63, 217), rgba(38, 232, 226, 0.83), rgba(33, 189, 111, 0.3), #659dcb);
+// Dark color scheme//
+//$dark-h1-color: rgba(128, 128, 128, 0.09);
+//$dark-footerheader-color: black;
+//$dark-buttons-color: rgba(0, 0, 0, 0.2);
+//$dark-nav-color1: #810808;
+//$dark-nav-color2: #b41919;
+
+//Bright color scheme//
+
+//$bright-h1-color: rgb(0, 0, 0);
+//$bright-footerheader-color: rgba(25, 63, 217, 0.87);
+//$bright-buttons-color: rgba(227, 226, 17, 0.83);
+//$bright-nav-color1: #698ae7;
+//$bright-nav-color2: #659dcb;
+
+
+
+
+
+

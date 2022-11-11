@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Me Site</title>
+    <link href="favicon.jpg" rel="icon">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="bright">
+
+<div class="site">
+     <header>
+        <a href="index.html"> <img src="favicon.jpg"></a>
+        <h1><a href="index.html">All about me</a></h1>
+        <img src="righticon.png">
+    </header>
+    <div class="nav">
+        <ul>
+            <li><a href="index.html"> <strong> Navigation </strong></a> </li>
+            <li> <a href="#book">  My Favorite Book </a></li>
+            <li> <a href="#placevisited"> A Place I Enjoyed </a></li>
+            <li> <a href="schools.html" target="_blank"> My Schools <img src="folderimg.png"></a></li>
+            <li> <a href="#feedbackform"> Feedback Form </a> </li>
+            <li> <a> This Project on GitHub <img src="folderimg.png"></a> </li>
+        </ul>
+    </div>
+    <main>
+        <div class="mainscreen">
+            <h1> Hello! Welcome to my website &#128525 </h1>
+            <h3> Great to have you here </h3>
+            <img src="happy-monkey.gif">
+        </div>
+
+        <div class="favbook" id="book">
+            <div class="booktext">
+                 <h1> My Favorite Book </h1>
+                <h3> Thinking, Fast and Slow, by Daniel Kahneman</h3>
+                <p>Thinking, Fast and Slow is a 2011 book by psychologist Daniel Kahneman.
+                    The book's main thesis is that of a dichotomy between two modes of thought: "System 1" is fast,
+                    instinctive and emotional; "System 2" is slower, more deliberative, and more logical. </p>
+            </div>
+            <div class="bookimg">
+                <img src="book.png">
+                <a target="_blank" href="https://books.google.co.il/books/about/Thinking_Fast_and_Slow.html?id=oV1tXT3HigoC&printsec=frontcover&source=kp_read_button&hl=en&redir_esc=y#v=onepage&q&f=false"><button type="button"> Click here for the PDF version</button></a>
+            </div>
+        </div>
+
+        <div class="placevisited" id="placevisited">
+<!--            <div class="popup">-->
+<!--                <img src="italy1.jpg" id="img11">-->
+<!--                <img src="italy2.jpeg" id="img12">-->
+<!--                <img src="italy3.jpeg" id="img13">-->
+<!--                <img src="italy4.jpg" id="img14">-->
+<!--            </div>-->
+            <div class="description">
+                <h1> A place I enjoyed visiting </h1>
+                <h3>  Italy!  </h3>
+                <p>Why? Because there is nothing like Italian food! </p>
+            </div>
+            <div class="pics">
+                <img src="italy1.jpg" id="img1" >
+                <img src="italy2.jpeg" id="img2">
+                <img src="italy3.jpeg" id="img3">
+                <img src="italy4.jpg" id="img4">
+                <img src="italy1.jpg">
+                <img src="italy1.jpg" >
+            </div>
+        </div>
+
+        <div class="feedbackform" id="feedbackform">
+            <h1> Feedback Form </h1>
+            <h3> I'd love to hear from you </h3>
+            <form class="thisform" method="get">
+                <div class="personal">
+                    <h5>Personal details</h5>
+                    <div class="nameemail">
+                        <label for="full name">Full Name: </label>
+                        <input type="text" name="full name" id="full name" required placeholder="John Doe"> <br><br>
+                         <label for="email" >Email: </label>
+                        <input type="email" name="email" id="email" required placeholder="JohnDoe@gmail.com"><br>
+                    </div>
+                    <div class="phonedate">
+                       <label for="date">Date of Birth: </label>
+                        <input type="date" name="date" id="date" value="2000-01-01" min="1900-01-01" max="2050-12-31"><br><br>
+                        <label for="phone">Phone: </label>
+                         <input type="text" name="phone" id="phone"><br>
+                    </div>
+                </div>
+                <br>
+                <div class="feedback">
+                    <h5>Your feedback</h5>
+                    <div class="rating">
+                        <p style="font-size: 1em; margin: 0; padding:0"> Rating:</p>
+                         <label for="rating1">1</label>
+                        <input type="radio" name="rating" value="1" id="rating1">
+                        <label for="rating2">2</label>
+                        <input type="radio" name="rating" value="2" id="rating2">
+                        <label for="rating3">3</label>
+                        <input type="radio" name="rating" value="3" id="rating3">
+                        <label for="rating4">4</label>
+                        <input type="radio" name="rating" value="4" id="rating4">
+                        <label for="rating5">5</label>
+                        <input type="radio" name="rating" value="5" id="rating5">
+                    </div>
+                    <div class="selector">
+                        <label for="howdidyou">How did you find this website:</label>
+                        <select name="howdidyou" id="howdidyou">
+                          <option value="GitHub">GitHub</option>
+                          <option value="LinkedIn">LinkedIn</option>
+                          <option value="WebDev">WebDev</option>
+                          <option value="Google">Google</option>
+                          <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="message">
+                        <br><label for="message">Your message:</label><br>
+                        <textarea name="message" id="message" required placeholder="Tell us what you think..." rows="6"> </textarea>
+                    </div>
+                </div>
+                <div class="formbuttons">
+                    <button type="submit" name="submit" id="submit">Submit</button>
+                    <button type="reset" name="reset" id="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+            <p style="text-align: center">Vicky's Website</p>
+            <p style="text-align: center"><a href="mailto:emailme@example.com">emailme@example.com </a></p>
+    </footer>
+
+</div>
+</body>
+</html>

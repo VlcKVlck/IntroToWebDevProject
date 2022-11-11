@@ -1,0 +1,582 @@
+h1 {
+  color: red;
+  font-family: "impact", serif;
+  font-size: calc(0.2em + 5vw);
+  line-height: calc(1em + 2vw);
+  padding: 0;
+  margin: 0;
+}
+
+h3 {
+  font-family: "Brush Script MT", cursive;
+  font-size: calc(0.2em + 3vw);
+  font-weight: lighter;
+  line-height: calc(0.5em + 2vw);
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-family: "calibri", serif;
+  font-size: calc(0.2em + 1vw);
+  width: 80%;
+  line-height: calc(0.3em + 2vw);
+  padding: 0;
+  margin: 0;
+}
+
+h5 {
+  font-family: "calibri", serif;
+  font-size: calc(0.2em + 1vw);
+  font-weight: bolder;
+  width: 80%;
+  line-height: calc(0.3em + 2vw);
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+body a {
+  cursor: pointer;
+  text-decoration-line: none;
+  color: inherit;
+}
+body button {
+  cursor: pointer;
+}
+body a:hover {
+  background-color: inherit;
+  color: gold;
+}
+
+.site {
+  height: 100vh;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-areas: "header header" "navbar main" "footer footer";
+}
+@media screen {
+  .site {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.dark header {
+  grid-area: header;
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  box-sizing: border-box;
+  align-items: center;
+  column-gap: 1em;
+  font-family: "impact", serif;
+  text-align: center;
+  background-color: black;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.dark header h1 {
+  text-align: left;
+  color: rgba(225, 219, 206, 0.91);
+  font-size: calc(1em + 2vw);
+  letter-spacing: 8px;
+  padding: 0;
+  margin: 0;
+}
+.dark header a:hover {
+  background-color: darkblue;
+}
+.dark header img {
+  height: calc(1em + 2vw);
+}
+@media screen {
+  .dark header {
+    position: static;
+  }
+}
+.dark .nav {
+  grid-area: navbar;
+  font-family: "calibri", serif;
+  font-size: calc(0.2em + 1vw);
+  background-color: #b41919;
+}
+.dark .nav ul {
+  position: sticky;
+  top: calc(3em + 2vw);
+  display: block;
+  list-style-type: none;
+  color: white;
+  margin: 0;
+  height: auto;
+  padding-left: 0;
+  background-color: #b41919;
+}
+.dark .nav ul li:nth-child(odd) {
+  background-color: #810808;
+}
+.dark .nav li a {
+  box-sizing: border-box;
+  display: block;
+  padding: 1em;
+  width: 100%;
+  font-weight: bolder;
+  border-bottom: 1px solid black;
+}
+.dark .nav li a img {
+  width: 1vw;
+}
+.dark main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5vh;
+}
+.dark main > div {
+  box-sizing: border-box;
+  align-items: center;
+  overflow-y: scroll;
+}
+.dark main .mainscreen {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5vh;
+}
+.dark main .mainscreen img {
+  height: calc(10em + 15vw);
+}
+@media screen {
+  .dark main .mainscreen {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.dark main .favbook {
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  padding-left: 1em;
+  column-gap: 1vw;
+}
+@media screen {
+  .dark main .favbook {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.dark main .favbook .booktext {
+  border: none;
+}
+.dark main .favbook .booktext p {
+  align-self: start;
+  width: 80%;
+  line-height: 3vw;
+}
+.dark main .favbook .bookimg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3em;
+}
+.dark main .favbook .bookimg img {
+  width: calc(3em + 20vw);
+  align-self: center;
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+.dark main .favbook .bookimg button {
+  height: calc(1em + 3vh);
+  width: 12vw;
+  background-color: #b41919;
+  border-radius: 10%;
+  color: red;
+  font-size: 1vw;
+  overflow: hidden;
+}
+.dark main .placevisited {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.5fr;
+  justify-content: space-evenly;
+  padding-left: 1em;
+}
+@media screen {
+  .dark main .placevisited {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.dark main .placevisited .description {
+  text-overflow: ellipsis;
+  border: none;
+}
+.dark main .placevisited .description p {
+  width: 80%;
+}
+.dark main .placevisited .pics {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 50%;
+  margin-top: 1em;
+  border: none;
+}
+.dark main .placevisited .pics img {
+  align-self: end;
+  width: calc(0.2em + 11vw);
+  height: calc(0.2em + 9vw);
+  margin: 1%;
+}
+.dark main .feedbackform {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  font-family: "calibri", serif;
+  font-size: 0.7em;
+}
+.dark main .feedbackform h1, .dark main .feedbackform h3 {
+  margin: 0;
+  padding: 0;
+}
+.dark main .feedbackform input {
+  font-size: 1em;
+  align-self: stretch;
+}
+.dark main .feedbackform .personal {
+  border: 1px lightgray solid;
+  border-radius: 3px;
+  padding: 1em;
+  display: grid;
+  column-gap: 1em;
+  grid-template-areas: "formtitle formtitle" "nameemail phonedate";
+}
+.dark main .feedbackform .personal h5 {
+  grid-area: formtitle;
+  padding: 0;
+  margin: 0;
+}
+.dark main .feedbackform .personal .nameemail {
+  grid-area: nameemail;
+}
+.dark main .feedbackform .personal .phonedate {
+  grid-area: phonedate;
+}
+.dark main .feedbackform .feedback {
+  border: 1px lightgray solid;
+  border-radius: 3px;
+  padding: 1em;
+  display: grid;
+  column-gap: 1em;
+  grid-template-areas: "form2title form2title" "rating message" "selector message";
+}
+.dark main .feedbackform .feedback h5 {
+  grid-area: form2title;
+  padding: 0;
+  margin: 0;
+}
+.dark main .feedbackform .feedback .rating {
+  grid-area: rating;
+}
+.dark main .feedbackform .feedback .message {
+  grid-area: message;
+}
+.dark main .feedbackform .feedback .selector {
+  grid-area: selector;
+}
+.dark main .feedbackform #submit {
+  background-color: green;
+  margin: 1%;
+  border-radius: 3px;
+  border-width: 1px;
+}
+.dark main .feedbackform #reset {
+  background-color: lightyellow;
+  margin: 1%;
+  border-radius: 3px;
+  border-width: 1px;
+}
+.dark footer {
+  grid-area: footer;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: rgba(225, 219, 206, 0.91);
+}
+.dark footer a {
+  color: rgba(225, 219, 206, 0.91);
+}
+.dark footer p {
+  padding: 0;
+  margin: 0;
+}
+
+.bright header {
+  grid-area: header;
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  box-sizing: border-box;
+  align-items: center;
+  column-gap: 1em;
+  font-family: "impact", serif;
+  text-align: center;
+  background-color: rgb(25, 63, 217);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.bright header h1 {
+  text-align: left;
+  color: rgb(255, 255, 255);
+  font-size: calc(1em + 2vw);
+  letter-spacing: 8px;
+  padding: 0;
+  margin: 0;
+}
+.bright header a:hover {
+  background-color: darkblue;
+}
+.bright header img {
+  height: calc(1em + 2vw);
+}
+@media screen {
+  .bright header {
+    position: static;
+  }
+}
+.bright .nav {
+  grid-area: navbar;
+  font-family: "calibri", serif;
+  font-size: calc(0.2em + 1vw);
+  background-color: #659dcb;
+}
+.bright .nav ul {
+  position: sticky;
+  top: calc(3em + 2vw);
+  display: block;
+  list-style-type: none;
+  color: white;
+  margin: 0;
+  height: auto;
+  padding-left: 0;
+  background-color: #659dcb;
+}
+.bright .nav ul li:nth-child(odd) {
+  background-color: rgba(33, 189, 111, 0.3);
+}
+.bright .nav li a {
+  box-sizing: border-box;
+  display: block;
+  padding: 1em;
+  width: 100%;
+  font-weight: bolder;
+  border-bottom: 1px solid black;
+}
+.bright .nav li a img {
+  width: 1vw;
+}
+.bright main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5vh;
+}
+.bright main > div {
+  box-sizing: border-box;
+  align-items: center;
+  overflow-y: scroll;
+}
+.bright main .mainscreen {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5vh;
+}
+.bright main .mainscreen img {
+  height: calc(10em + 15vw);
+}
+@media screen {
+  .bright main .mainscreen {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.bright main .favbook {
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  padding-left: 1em;
+  column-gap: 1vw;
+}
+@media screen {
+  .bright main .favbook {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.bright main .favbook .booktext {
+  border: none;
+}
+.bright main .favbook .booktext p {
+  align-self: start;
+  width: 80%;
+  line-height: 3vw;
+}
+.bright main .favbook .bookimg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3em;
+}
+.bright main .favbook .bookimg img {
+  width: calc(3em + 20vw);
+  align-self: center;
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+.bright main .favbook .bookimg button {
+  height: calc(1em + 3vh);
+  width: 12vw;
+  background-color: #659dcb;
+  border-radius: 10%;
+  color: red;
+  font-size: 1vw;
+  overflow: hidden;
+}
+.bright main .placevisited {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.5fr;
+  justify-content: space-evenly;
+  padding-left: 1em;
+}
+@media screen {
+  .bright main .placevisited {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.bright main .placevisited .description {
+  text-overflow: ellipsis;
+  border: none;
+}
+.bright main .placevisited .description p {
+  width: 80%;
+}
+.bright main .placevisited .pics {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 50%;
+  margin-top: 1em;
+  border: none;
+}
+.bright main .placevisited .pics img {
+  align-self: end;
+  width: calc(0.2em + 11vw);
+  height: calc(0.2em + 9vw);
+  margin: 1%;
+}
+.bright main .feedbackform {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  font-family: "calibri", serif;
+  font-size: 0.7em;
+}
+.bright main .feedbackform h1, .bright main .feedbackform h3 {
+  margin: 0;
+  padding: 0;
+}
+.bright main .feedbackform input {
+  font-size: 1em;
+  align-self: stretch;
+}
+.bright main .feedbackform .personal {
+  border: 1px lightgray solid;
+  border-radius: 3px;
+  padding: 1em;
+  display: grid;
+  column-gap: 1em;
+  grid-template-areas: "formtitle formtitle" "nameemail phonedate";
+}
+.bright main .feedbackform .personal h5 {
+  grid-area: formtitle;
+  padding: 0;
+  margin: 0;
+}
+.bright main .feedbackform .personal .nameemail {
+  grid-area: nameemail;
+}
+.bright main .feedbackform .personal .phonedate {
+  grid-area: phonedate;
+}
+.bright main .feedbackform .feedback {
+  border: 1px lightgray solid;
+  border-radius: 3px;
+  padding: 1em;
+  display: grid;
+  column-gap: 1em;
+  grid-template-areas: "form2title form2title" "rating message" "selector message";
+}
+.bright main .feedbackform .feedback h5 {
+  grid-area: form2title;
+  padding: 0;
+  margin: 0;
+}
+.bright main .feedbackform .feedback .rating {
+  grid-area: rating;
+}
+.bright main .feedbackform .feedback .message {
+  grid-area: message;
+}
+.bright main .feedbackform .feedback .selector {
+  grid-area: selector;
+}
+.bright main .feedbackform #submit {
+  background-color: green;
+  margin: 1%;
+  border-radius: 3px;
+  border-width: 1px;
+}
+.bright main .feedbackform #reset {
+  background-color: lightyellow;
+  margin: 1%;
+  border-radius: 3px;
+  border-width: 1px;
+}
+.bright footer {
+  grid-area: footer;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(25, 63, 217);
+  color: rgb(255, 255, 255);
+}
+.bright footer a {
+  color: rgb(255, 255, 255);
+}
+.bright footer p {
+  padding: 0;
+  margin: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
