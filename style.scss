@@ -206,6 +206,7 @@ body{
        }
 
      .placevisited {
+       height: 90vh;
        display: grid;
        grid-template-columns: 2fr 1fr 0.5fr;
        justify-content: space-evenly;
