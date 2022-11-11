@@ -66,11 +66,6 @@ body{
   grid-template-areas: "header header"
                         "navbar main"
                         "footer footer";
-  @media screen{
-  display: flex;
-    flex-direction: column;
-  }
-
 }
 
 @mixin themes($theme-name, $header-text-color, $footerheader-color, $buttons-color, $nav-color1, $nav-color2) {
@@ -91,6 +86,7 @@ body{
        width: 100%;
        padding: 0;
        margin: 0;
+
        h1 {
          text-align: left;
          color: $header-text-color;
@@ -99,16 +95,17 @@ body{
          padding: 0;
          margin: 0;
        }
-       a:hover{
-        background-color: darkblue;
+
+       a:hover {
+         background-color: darkblue;
        }
+
        img {
          height: calc(1em + 2vw);
        }
-       @media screen{
-        position: static;
-       }
+
      }
+
      .nav {
        grid-area: navbar;
        font-family: $font-p;
@@ -151,7 +148,7 @@ body{
        flex-direction: column;
        row-gap: 5vh;
 
-       >div {
+       > div {
          box-sizing: border-box;
          align-items: center;
          overflow-y: scroll;
@@ -165,10 +162,6 @@ body{
          img {
            height: calc(10em + 15vw);
          }
-           @media screen{
-             display: flex;
-             flex-direction: column;
-       }
        }
 
        .favbook {
@@ -177,12 +170,9 @@ body{
          grid-template-columns: 3fr 2fr;
          padding-left: 1em;
          column-gap: 1vw;
-           @media screen{
-             display: flex;
-             flex-direction: column;
-         }
          .booktext {
            border: none;
+
            p {
              align-self: start;
              width: 80%;
@@ -190,6 +180,7 @@ body{
 
            }
          }
+
          .bookimg {
            display: flex;
            flex-direction: column;
@@ -201,54 +192,48 @@ body{
              padding-bottom: 5%;
              padding-top: 5%;
            }
-
-           button {
-             height: calc(1em + 3vh);
-             width: 12vw;
-             background-color: $nav-color2;
-             border-radius: 10%;
-             color: red;
-             font-size: 1vw;
-             overflow: hidden;
-           }
          }
 
-       }
-       .placevisited {
-         display: grid;
-         grid-template-columns: 2fr 1fr 0.5fr;
-         justify-content: space-evenly;
-         padding-left: 1em;
-           @media screen{
-             display: flex;
-             flex-direction: column;
-         }
-         .description {
-           text-overflow: ellipsis;
-           border: none;
-
-           p {
-             width: 80%;
-           }
-         }
-
-         .pics {
-           display: flex;
-           flex-direction: column;
-           overflow-y: scroll;
-           overflow-x: hidden;
-           height: 50%;
-           margin-top: 1em;
-           border: none;
-
-           img {
-             align-self: end;
-             width: calc(0.2em + 11vw);
-             height: calc(0.2em + 9vw);
-             margin: 1%;
-           }
+         button {
+           height: calc(1em + 3vh);
+           width: 12vw;
+           background-color: $nav-color2;
+           border-radius: 10%;
+           color: red;
+           font-size: 1vw;
+           overflow: hidden;
          }
        }
+
+     .placevisited {
+       display: grid;
+       grid-template-columns: 2fr 1fr 0.5fr;
+       justify-content: space-evenly;
+       padding-left: 1em;
+       .description {
+         text-overflow: ellipsis;
+         border: none;
+         p {
+           width: 80%;
+         }
+       }
+
+       .pics {
+         display: flex;
+         flex-direction: column;
+         overflow-y: scroll;
+         overflow-x: hidden;
+         height: 50%;
+         margin-top: 1em;
+         border: none;
+         img {
+           align-self: end;
+           width: calc(0.2em + 11vw);
+           height: calc(0.2em + 9vw);
+           margin: 1%;
+         }
+       }
+     }
 
      .feedbackform {
        height: 90vh;
@@ -303,6 +288,7 @@ body{
          grid-template-areas: "form2title form2title"
                                   "rating message"
                                   "selector message";
+
          h5 {
            grid-area: form2title;
            padding: 0;
@@ -312,9 +298,11 @@ body{
          .rating {
            grid-area: rating;
          }
+
          .message {
            grid-area: message;
          }
+
          .selector {
            grid-area: selector;
          }
@@ -334,8 +322,9 @@ body{
          border-width: 1px;
        }
      }
-
    }
+
+
 
      footer {
        grid-area: footer;
@@ -357,6 +346,21 @@ body{
      }
    }
 }
+
+  @media only screen and (max-width:400px){
+    .site{
+      display: flex;
+      flex-direction: column;
+    }
+    header, .nav{
+        position: static;
+       }
+    .mainscreen, .favbook, .placevisited{
+             display: flex;
+             flex-direction: column;
+       }
+    }
+
 
 
 

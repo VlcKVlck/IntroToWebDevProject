@@ -58,13 +58,20 @@ body a:hover {
   grid-template-columns: 1fr 5fr;
   grid-template-areas: "header header" "navbar main" "footer footer";
 }
-@media screen {
+
+@media only screen and (max-width: 400px) {
   .site {
     display: flex;
     flex-direction: column;
   }
+  header, .nav {
+    position: static;
+  }
+  .mainscreen, .favbook, .placevisited {
+    display: flex;
+    flex-direction: column;
+  }
 }
-
 .dark header {
   grid-area: header;
   position: sticky;
@@ -94,11 +101,6 @@ body a:hover {
 }
 .dark header img {
   height: calc(1em + 2vw);
-}
-@media screen {
-  .dark header {
-    position: static;
-  }
 }
 .dark .nav {
   grid-area: navbar;
@@ -151,24 +153,12 @@ body a:hover {
 .dark main .mainscreen img {
   height: calc(10em + 15vw);
 }
-@media screen {
-  .dark main .mainscreen {
-    display: flex;
-    flex-direction: column;
-  }
-}
 .dark main .favbook {
   height: 90vh;
   display: grid;
   grid-template-columns: 3fr 2fr;
   padding-left: 1em;
   column-gap: 1vw;
-}
-@media screen {
-  .dark main .favbook {
-    display: flex;
-    flex-direction: column;
-  }
 }
 .dark main .favbook .booktext {
   border: none;
@@ -190,7 +180,7 @@ body a:hover {
   padding-bottom: 5%;
   padding-top: 5%;
 }
-.dark main .favbook .bookimg button {
+.dark main .favbook button {
   height: calc(1em + 3vh);
   width: 12vw;
   background-color: #b41919;
@@ -204,12 +194,6 @@ body a:hover {
   grid-template-columns: 2fr 1fr 0.5fr;
   justify-content: space-evenly;
   padding-left: 1em;
-}
-@media screen {
-  .dark main .placevisited {
-    display: flex;
-    flex-direction: column;
-  }
 }
 .dark main .placevisited .description {
   text-overflow: ellipsis;
@@ -352,11 +336,6 @@ body a:hover {
 .bright header img {
   height: calc(1em + 2vw);
 }
-@media screen {
-  .bright header {
-    position: static;
-  }
-}
 .bright .nav {
   grid-area: navbar;
   font-family: "calibri", serif;
@@ -408,24 +387,12 @@ body a:hover {
 .bright main .mainscreen img {
   height: calc(10em + 15vw);
 }
-@media screen {
-  .bright main .mainscreen {
-    display: flex;
-    flex-direction: column;
-  }
-}
 .bright main .favbook {
   height: 90vh;
   display: grid;
   grid-template-columns: 3fr 2fr;
   padding-left: 1em;
   column-gap: 1vw;
-}
-@media screen {
-  .bright main .favbook {
-    display: flex;
-    flex-direction: column;
-  }
 }
 .bright main .favbook .booktext {
   border: none;
@@ -447,7 +414,7 @@ body a:hover {
   padding-bottom: 5%;
   padding-top: 5%;
 }
-.bright main .favbook .bookimg button {
+.bright main .favbook button {
   height: calc(1em + 3vh);
   width: 12vw;
   background-color: #659dcb;
@@ -461,12 +428,6 @@ body a:hover {
   grid-template-columns: 2fr 1fr 0.5fr;
   justify-content: space-evenly;
   padding-left: 1em;
-}
-@media screen {
-  .bright main .placevisited {
-    display: flex;
-    flex-direction: column;
-  }
 }
 .bright main .placevisited .description {
   text-overflow: ellipsis;
