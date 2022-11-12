@@ -1,55 +1,52 @@
-
 // Text - same across themes
 
-$font-h1: "impact", serif;
-$font-p:"calibri", serif;
+$font-h1: 'impact', serif;
+$font-p: 'calibri', serif;
 $font-h3: 'Brush Script MT', cursive;
 
-h1{
-   color: red;
-   font-family: $font-h1;
-   font-size: calc(0.2em + 5vw);
-   line-height: calc(1em + 2vw);
-   padding:0;
-   margin:0;
+h1 {
+  color: red;
+  font-family: $font-h1;
+  font-size: calc(0.2em + 5vw);
+  line-height: calc(1em + 2vw);
+  padding: 0;
+  margin: 0;
 }
-h3{
-   font-family: $font-h3;
-   font-size: calc(0.2em + 3vw);
+h3 {
+  font-family: $font-h3;
+  font-size: calc(0.2em + 3vw);
   font-weight: lighter;
   line-height: calc(0.5em + 2vw);
-  padding:0;
-  margin:0;
-
-}
- p {
-   font-family: $font-p;
-   font-size: calc(0.2em + 1vw);
-   width: 80%;
-   line-height: calc(0.3em + 2vw);
-   padding:0;
-   margin:0;
-  }
-
- h5{
-   font-family: $font-p;
-   font-size: calc(0.2em + 1vw);
-   font-weight: bolder;
-   width: 80%;
-   line-height: calc(0.3em + 2vw);
-   padding:0;
-   margin:0;
- }
-
-
-body{
+  padding: 0;
   margin: 0;
-  a{
+}
+p {
+  font-family: $font-p;
+  font-size: calc(0.2em + 1vw);
+  width: 80%;
+  line-height: calc(0.3em + 2vw);
+  padding: 0;
+  margin: 0;
+}
+
+h5 {
+  font-family: $font-p;
+  font-size: calc(0.2em + 2vw);
+  font-weight: bolder;
+  width: 80%;
+  line-height: calc(0.3em + 2vw);
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  a {
     cursor: pointer;
     text-decoration-line: none;
     color: inherit;
   }
-  button{
+  button {
     cursor: pointer;
   }
   a:hover {
@@ -63,316 +60,317 @@ body{
   overflow-y: scroll;
   display: grid;
   grid-template-columns: 1fr 5fr;
-  grid-template-areas: "header header"
-                        "navbar main"
-                        "footer footer";
+  grid-template-areas:
+    'header header'
+    'navbar main'
+    'footer footer';
 }
 
-@mixin themes($theme-name, $header-text-color, $footerheader-color, $buttons-color, $nav-color1, $nav-color2) {
-   .#{$theme-name} {
+@mixin themes(
+  $theme-name,
+  $header-text-color,
+  $footerheader-color,
+  $buttons-color,
+  $nav-color1,
+  $nav-color2
+) {
+  .#{$theme-name} {
+    header {
+      grid-area: header;
+      position: sticky;
+      top: 0;
+      display: grid;
+      grid-template-columns: 1fr 8fr 1fr;
+      box-sizing: border-box;
+      align-items: center;
+      column-gap: 1em;
+      font-family: $font-h1;
+      text-align: center;
+      background-color: $footerheader-color;
+      width: 100%;
+      padding: 0;
+      margin: 0;
 
-     header {
-       grid-area: header;
-       position: sticky;
-       top: 0;
-       display: grid;
-       grid-template-columns: 1fr 8fr 1fr;
-       box-sizing: border-box;
-       align-items: center;
-       column-gap: 1em;
-       font-family: $font-h1;
-       text-align: center;
-       background-color: $footerheader-color;
-       width: 100%;
-       padding: 0;
-       margin: 0;
+      h1 {
+        text-align: left;
+        color: $header-text-color;
+        font-size: calc(1em + 2vw);
+        letter-spacing: 8px;
+        padding: 0;
+        margin: 0;
+      }
 
-       h1 {
-         text-align: left;
-         color: $header-text-color;
-         font-size: calc(1em + 2vw);
-         letter-spacing: 8px;
-         padding: 0;
-         margin: 0;
-       }
+      a:hover {
+        background-color: darkblue;
+      }
 
-       a:hover {
-         background-color: darkblue;
-       }
+      img {
+        height: calc(1em + 2vw);
+      }
+    }
 
-       img {
-         height: calc(1em + 2vw);
-       }
+    .nav {
+      grid-area: navbar;
+      font-family: $font-p;
+      font-size: calc(0.2em + 1vw);
+      background-color: $nav-color2;
 
-     }
+      ul {
+        position: sticky;
+        top: calc(3em + 2vw);
+        display: block;
+        list-style-type: none;
+        color: white;
+        margin: 0;
+        height: auto;
+        padding-left: 0;
+        background-color: $nav-color2;
 
-     .nav {
-       grid-area: navbar;
-       font-family: $font-p;
-       font-size: calc(0.2em + 1vw);
-       background-color: $nav-color2;
+        li:nth-child(odd) {
+          background-color: $nav-color1;
+        }
+      }
 
-       ul {
-         position: sticky;
-         top: calc(3em + 2vw);
-         display: block;
-         list-style-type: none;
-         color: white;
-         margin: 0;
-         height: auto;
-         padding-left: 0;
-         background-color: $nav-color2;
+      li a {
+        box-sizing: border-box;
+        display: block;
+        padding: 1em;
+        width: 100%;
+        font-weight: bolder;
+        border-bottom: 1px solid black;
 
-         li:nth-child(odd) {
-           background-color: $nav-color1;
-         }
-       }
+        img {
+          width: 1vw;
+        }
+      }
+    }
 
-       li a {
-         box-sizing: border-box;
-         display: block;
-         padding: 1em;
-         width: 100%;
-         font-weight: bolder;
-         border-bottom: 1px solid black;
-
-         img {
-           width: 1vw;
-         }
-       }
-     }
-
-     main {
-       grid-area: main;
-       display: flex;
-       flex-direction: column;
-       row-gap: 5vh;
-
-       > div {
-         box-sizing: border-box;
-         align-items: center;
-         overflow-y: scroll;
-       }
-
-       .mainscreen {
-         height: 80vh;
-         display: flex;
-         flex-direction: column;
-         padding-bottom: 5vh;
-         img {
-           height: calc(10em + 15vw);
-         }
-       }
-
-       .favbook {
-         height: 90vh;
-         display: grid;
-         grid-template-columns: 3fr 2fr;
-         padding-left: 1em;
-         column-gap: 1vw;
-         .booktext {
-           border: none;
-
-           p {
-             align-self: start;
-             width: 80%;
-             line-height: 3vw;
-
-           }
-         }
-
-         .bookimg {
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           margin: 3em;
-           img {
-             width: calc(3em + 20vw);
-             align-self: center;
-             padding-bottom: 5%;
-             padding-top: 5%;
-           }
-         }
-
-         button {
-           height: calc(1em + 3vh);
-           width: 12vw;
-           background-color: $nav-color2;
-           border-radius: 10%;
-           color: red;
-           font-size: 1vw;
-           overflow: hidden;
-         }
-       }
-
-     .placevisited {
-       height: 90vh;
-       display: grid;
-       grid-template-columns: 2fr 1fr 0.5fr;
-       justify-content: space-evenly;
-       padding-left: 1em;
-       .description {
-         text-overflow: ellipsis;
-         border: none;
-         p {
-           width: 80%;
-         }
-       }
-
-       .pics {
-         display: flex;
-         flex-direction: column;
-         overflow-y: scroll;
-         overflow-x: hidden;
-         height: 50%;
-         margin-top: 1em;
-         border: none;
-         img {
-           align-self: end;
-           width: calc(0.2em + 11vw);
-           height: calc(0.2em + 9vw);
-           margin: 1%;
-         }
-       }
-     }
-
-     .feedbackform {
-       height: 90vh;
-       display: flex;
-       flex-direction: column;
-       align-content: center;
-       justify-content: center;
-       font-family: $font-p;
-       font-size: 0.7em;
-
-       h1, h3 {
-         margin: 0;
-         padding: 0;
-       }
-
-       input {
-         font-size: 1em;
-         align-self: stretch;
-       }
-
-       .personal {
-         border: 1px lightgray solid;
-         border-radius: 3px;
-         padding: 1em;
-         display: grid;
-         column-gap: 1em;
-         //grid-template-columns: 1fr 1fr;
-         grid-template-areas: "formtitle formtitle"
-                                  "nameemail phonedate";
-
-         h5 {
-           grid-area: formtitle;
-           padding: 0;
-           margin: 0;
-         }
-
-         .nameemail {
-           grid-area: nameemail;
-         }
-
-         .phonedate {
-           grid-area: phonedate;
-         }
-       }
-
-       .feedback {
-         border: 1px lightgray solid;
-         border-radius: 3px;
-         padding: 1em;
-         display: grid;
-         column-gap: 1em;
-         grid-template-areas: "form2title form2title"
-                                  "rating message"
-                                  "selector message";
-
-         h5 {
-           grid-area: form2title;
-           padding: 0;
-           margin: 0;
-         }
-
-         .rating {
-           grid-area: rating;
-         }
-
-         .message {
-           grid-area: message;
-         }
-
-         .selector {
-           grid-area: selector;
-         }
-       }
-
-       #submit {
-         background-color: green;
-         margin: 1%;
-         border-radius: 3px;
-         border-width: 1px;
-       }
-
-       #reset {
-         background-color: lightyellow;
-         margin: 1%;
-         border-radius: 3px;
-         border-width: 1px;
-       }
-     }
-   }
-
-
-
-     footer {
-       grid-area: footer;
-       position: sticky;
-       bottom: 0;
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-       background-color: $footerheader-color;
-       color:$header-text-color;
-       a {
-         color: $header-text-color;
-       }
-       p{
-         padding:0;
-         margin:0;
-       }
-     }
-   }
-}
-
-  @media only screen and (max-width:400px){
-    .site{
+    main {
+      grid-area: main;
       display: flex;
       flex-direction: column;
+      row-gap: 5vh;
+
+      > div {
+        box-sizing: border-box;
+        align-items: center;
+        overflow-y: scroll;
+        height: 90vh;
+      }
+
+      .mainscreen {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 5vh;
+        img {
+          height: calc(10em + 15vw);
+        }
+      }
+
+      .favbook {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        padding-left: 1em;
+        column-gap: 1vw;
+        .booktext {
+          border: none;
+          p {
+            align-self: start;
+            width: 80%;
+            line-height: 3vw;
+          }
+        }
+
+        .bookimg {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 3em;
+          img {
+            width: calc(3em + 20vw);
+            align-self: center;
+            padding-bottom: 5%;
+            padding-top: 5%;
+          }
+        }
+
+        button {
+          height: calc(1em + 3vh);
+          width: 12vw;
+          background-color: $nav-color2;
+          border-radius: 10%;
+          color: red;
+          font-size: 1vw;
+          overflow: hidden;
+        }
+      }
+
+      .placevisited {
+        display: grid;
+        grid-template-columns: 2fr 1fr 0.5fr;
+        justify-content: space-evenly;
+        padding-left: 1em;
+        .description {
+          text-overflow: ellipsis;
+          border: none;
+          p {
+            align-self: start;
+            width: 80%;
+            line-height: 3vw;
+          }
+        }
+
+        .pics {
+          display: flex;
+          flex-direction: column;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          // height: 50%;
+          margin-top: 1em;
+          border: none;
+          img {
+            align-self: end;
+            width: calc(0.2em + 11vw);
+            height: calc(0.2em + 9vw);
+            margin: 1%;
+          }
+        }
+      }
+
+      .feedbackform {
+        //  height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        font-family: $font-p;
+        input {
+          font-size: 1em;
+          align-self: stretch;
+        }
+        .personal {
+          border: 1px lightgray solid;
+          border-radius: 3px;
+          padding: 1em;
+          display: grid;
+          column-gap: 1em;
+          //grid-template-columns: 1fr 1fr;
+          grid-template-areas:
+            'formtitle formtitle'
+            'nameemail phonedate';
+
+          h5 {
+            grid-area: formtitle;
+            padding: 0;
+            margin: 0;
+          }
+
+          .nameemail {
+            grid-area: nameemail;
+          }
+
+          .phonedate {
+            grid-area: phonedate;
+          }
+        }
+
+        .feedback {
+          border: 1px lightgray solid;
+          border-radius: 3px;
+          padding: 1em;
+          display: grid;
+          column-gap: 1em;
+          grid-template-areas:
+            'form2title form2title'
+            'rating message'
+            'selector message';
+
+          h5 {
+            grid-area: form2title;
+            padding: 0;
+            margin: 0;
+          }
+
+          .rating {
+            grid-area: rating;
+          }
+
+          .message {
+            grid-area: message;
+          }
+
+          .selector {
+            grid-area: selector;
+          }
+        }
+
+        #submit {
+          background-color: green;
+          margin: 1%;
+          border-radius: 3px;
+          border-width: 1px;
+        }
+
+        #reset {
+          background-color: lightyellow;
+          margin: 1%;
+          border-radius: 3px;
+          border-width: 1px;
+        }
+      }
     }
-    header, .nav{
-        position: static;
-       }
-    .mainscreen, .favbook, .placevisited{
-             display: flex;
-             flex-direction: column;
-       }
+
+    footer {
+      grid-area: footer;
+      position: sticky;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $footerheader-color;
+      color: $header-text-color;
+      a {
+        color: $header-text-color;
+      }
+      p {
+        padding: 0;
+        margin: 0;
+      }
     }
+  }
+}
 
+@media only screen and (max-width: 400px) {
+  .site {
+    display: flex;
+    flex-direction: column;
+  }
+  header,
+  .nav {
+    position: static;
+  }
+  .mainscreen,
+  .favbook,
+  .placevisited {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
-
-
-
-
-
-@include themes(dark, rgba(225, 219, 206, 0.91), black, rgba(0, 0, 0, 0.2), #810808, #b41919);
-@include themes(bright, rgb(255, 255, 255), rgb(25, 63, 217), rgba(38, 232, 226, 0.83), rgba(33, 189, 111, 0.3), #659dcb);
-
-
-
-
-
-
+@include themes(
+  dark,
+  rgba(225, 219, 206, 0.91),
+  black,
+  rgba(0, 0, 0, 0.2),
+  #810808,
+  #b41919
+);
+@include themes(
+  bright,
+  rgb(255, 255, 255),
+  rgb(25, 63, 217),
+  rgba(38, 232, 226, 0.83),
+  rgba(33, 189, 111, 0.3),
+  #659dcb
+);
